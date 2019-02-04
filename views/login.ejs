@@ -1,0 +1,12 @@
+<% include partials/header %>
+
+<form action="/login" method="POST">
+    <!-- <input type="email" name="email" placeholder="E-mail"> -->
+    <input type="text" name="username" placeholder="Brukernavn">
+    <input type="password" name="password" placeholder="Passord">
+    <input type="submit" value="Logg inn">
+</form>
+
+<a href="/register">Ikke bruker? Registrer deg i dag!</a>
+
+<% include partials/footer %>
