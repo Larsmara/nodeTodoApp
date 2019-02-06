@@ -5,19 +5,22 @@ var User = require("../models/user");
 var middleware = require("../middleware");
 
 // Show all todos!
-router.get("/", middleware.isLoggedIn ,function(req,res){
-    Todo.find({}, function(err,todos){
-        if(err){
-            console.loog(err);
-        } else {
-            res.render("todo/index", {todos: todos});
-            console.log(todos);
-        }
-    });
+router.get("/", middleware.isLoggedIn,function(req,res){
+        Todo.find({}, function(err,todos){
+             if(err){
+                console.loog(err);
+            } else {
+                if(req.isAuthenticated()){
+                    Todo.findById()
+                } else {
+                    console.log("Ikke autentisert");
+                }
+            } 
+        });
 });
 
 // NY TODO
-router.post("/", middleware.isLoggedIn, function(req,res){
+router.post("/", middleware.isLoggedIn, middleware.checkTodoOwnership, function(req,res){
     console.log("Lagt til item");
     var name = req.body.item;
     var author = {id: req.user._id, username: req.user.username};
@@ -36,3 +39,5 @@ router.post("/", middleware.isLoggedIn, function(req,res){
 module.exports = router;
 
 
+/* res.render("todo/index", {todos: todos});
+console.log(todos); */
