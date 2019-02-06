@@ -1,5 +1,4 @@
 var Todo    = require("../models/todos");
-var user    = require("../models/user");
 
 var middlewareObj = {};
 

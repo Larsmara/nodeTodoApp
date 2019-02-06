@@ -5,18 +5,28 @@ var User = require("../models/user");
 var middleware = require("../middleware");
 
 // Show all todos!
+<<<<<<< HEAD
 router.get("/", middleware.isLoggedIn,function(req,res){
     Todo.find({'author.username': req.user.username}, function(err,todos){
         if(err){
             console.log(err);
         } else {
             res.render("todo/index");
+=======
+router.get("/", middleware.isLoggedIn ,function(req,res){
+    Todo.find({}, function(err,todos){
+        if(err){
+            console.loog(err);
+        } else {
+            res.render("todo/index", {todos: todos});
+            console.log(todos);
+>>>>>>> parent of c9cdebb... user authentication
         }
     });
 });
 
 // NY TODO
-router.post("/", middleware.isLoggedIn, middleware.checkTodoOwnership, function(req,res){
+router.post("/", middleware.isLoggedIn, function(req,res){
     console.log("Lagt til item");
     var name = req.body.item;
     var author = {id: req.user._id, username: req.user.username};
@@ -32,3 +42,8 @@ router.post("/", middleware.isLoggedIn, middleware.checkTodoOwnership, function(
     });
 });
 module.exports = router;
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> parent of c9cdebb... user authentication
