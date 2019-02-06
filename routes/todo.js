@@ -5,22 +5,12 @@ var User = require("../models/user");
 var middleware = require("../middleware");
 
 // Show all todos!
-<<<<<<< HEAD
-router.get("/", middleware.isLoggedIn,function(req,res){
-    Todo.find({'author.username': req.user.username}, function(err,todos){
-        if(err){
-            console.log(err);
-        } else {
-            res.render("todo/index");
-=======
 router.get("/", middleware.isLoggedIn ,function(req,res){
-    Todo.find({}, function(err,todos){
+    Todo.find({'author.username': req.user.username}, function(err,todos){
         if(err){
             console.loog(err);
         } else {
-            res.render("todo/index", {todos: todos});
-            console.log(todos);
->>>>>>> parent of c9cdebb... user authentication
+            res.render("todo/index", {currentUser: req.user,todos: todos});
         }
     });
 });
@@ -41,9 +31,5 @@ router.post("/", middleware.isLoggedIn, function(req,res){
         }
     });
 });
+
 module.exports = router;
-<<<<<<< HEAD
-=======
-
-
->>>>>>> parent of c9cdebb... user authentication
