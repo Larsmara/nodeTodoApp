@@ -23,6 +23,12 @@
             <li class="nav-item">
                 <a class="nav-link" href="/about">Om</a>
             </li>
+            <% if(!currentUser) { %>
+            <% } else { %>
+                <li class="nav-item">
+                    <a href="/todo" class="nav-link">Mine Todos</a>
+                </li>
+            <% } %>
             </ul>
             <ul class="navbar-nav ml-auto">
                 <% if(!currentUser){ %>
