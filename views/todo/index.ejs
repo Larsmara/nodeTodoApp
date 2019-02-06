@@ -1,7 +1,7 @@
 <% include ../partials/header %>
 
 <div class="container">
-    <h1>Todo List</h1>
+    <h1>Todo List for bruker: <%= currentUser.username %></h1>
 
     <form action="/todo" method="POST">
         <input type="text" name="item" placeholder="Legg til ny todo">
