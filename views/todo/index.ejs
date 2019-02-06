@@ -1,5 +1,23 @@
 <% include ../partials/header %>
 
-<h1>Todooos</h1>
+<div class="container">
+    <h1>Todo List</h1>
+
+    <form action="/todo" method="POST">
+        <input type="text" name="item" placeholder="Legg til ny todo">
+        <input type="submit" value="Legg til">
+    </form>
+
+    <!-- List of todos -->
+    <div class="row">
+        <ul>
+            <% todos.forEach(function(todos){ %>
+                <li> <%= todos.name %></li>
+            <% }) %> 
+        </ul>
+    </div>
+
+
+</div>
 
 <% include ../partials/footer %>

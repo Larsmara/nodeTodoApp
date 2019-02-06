@@ -11,15 +11,15 @@ var express         = require("express"),
     var authRoute = require("./routes/index"), 
         todoRoute = require("./routes/todo");
 
-mongoose.connect("mongodb://localhost:27017/todoApps", {useNewUrlParser: true});
+mongoose.connect("mongodb://localhost:27017/todoList", {useNewUrlParser: true});
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname+ "/public"));
 
 app.use(require("express-session")({
     secret: "Lars lager de beste appene",
-    resave: false,
-    saveUninitialized: false
+    resave: true,
+    saveUninitialized: true
 }));
 
 app.use(passport.initialize());
