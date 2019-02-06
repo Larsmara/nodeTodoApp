@@ -41,7 +41,11 @@ router.post("/login", passport.authenticate("local",
 // Logout logic
 router.get("/logout", function(req,res){
     req.logOut();
-    res.redirect("/landing");
+    res.render("landing");
+});
+
+router.get("/about", function(req,res){
+    res.render("about");
 });
 
 // ROOT ROUTE
