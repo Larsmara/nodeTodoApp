@@ -18,8 +18,8 @@ app.use(express.static(__dirname+ "/public"));
 
 app.use(require("express-session")({
     secret: "Lars lager de beste appene",
-    resave: true,
-    saveUninitialized: true
+    resave: false,
+    saveUninitialized: false
 }));
 
 app.use(passport.initialize());
