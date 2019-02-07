@@ -11,7 +11,9 @@ var express         = require("express"),
     var authRoute = require("./routes/index"), 
         todoRoute = require("./routes/todo");
 
-mongoose.connect("mongodb://localhost:27017/todoList", {useNewUrlParser: true});
+//mongoose.connect("mongodb://localhost:27017/todoList", {useNewUrlParser: true});
+mongoose.connect("mongodb://lars:qw7tk2cu7@ds125945.mlab.com:25945/nodetodoapp", {useNewUrlParser: true});
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname+ "/public"));
@@ -37,5 +39,9 @@ app.use(authRoute);
 app.use("/todo", todoRoute);
 
 app.listen(3000, function(){
+    console.log("TodoApp Server Started!");
+ });
+
+/* app.listen(3000, function(){
     console.log("TodoApp server startet");
-});
+}); */
