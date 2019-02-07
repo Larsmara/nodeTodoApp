@@ -1,0 +1,86 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    font-family: Robot;
+}
+
+.todo h1 {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+
+.todo {
+    width: 400px;
+    margin: 100px auto;
+    background: #f7f7f7;
+    box-shadow: 0 0 3px rgba(0,0,0,0.1);
+}
+
+.todo input {
+    width: 350px;
+    height: 40px;
+    text-transform: capitalize;
+}
+
+.todo li button {
+    width: 40px;
+}
+
+.todo input:focus{
+    background: #fff;
+    border: 3px solid #2980b9;
+    outline: none;
+}
+
+.todo button {
+    width: 50px;
+    height: 40px;
+    display: inline-block;
+    float: right;
+}
+
+.todo ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.todo li {
+    height: 40px;
+    line-height: 40px;
+}
+
+.todo li:nth-child(2n){
+    background: #f7f7f7;
+}
+
+.todo span {
+    background: #e74c3c;
+    height: 40px;
+    margin-right: 20px;
+    text-align: center;
+    color: white;
+    width: 0px;
+    display: inline-block;
+    transition: 0.2s linear;
+    opacity: 0;
+}
+
+.todo li:hover span{
+    width: 40px;
+    opacity: 1.0;
+}
+
+.completed {
+    color: gray;
+    text-decoration: line-through;
+}
+
+.pink {
+    color: pink;
+    text-decoration: #2980b9;
+}

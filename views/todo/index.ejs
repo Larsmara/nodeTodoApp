@@ -1,23 +1,33 @@
 <% include ../partials/header %>
 
-<div class="container">
-    <h1>Todo List for bruker: <%= currentUser.username %></h1>
+<div class="todo">
+    <h1>Todo List</h1>
 
-    <form action="/todo" method="POST">
-        <input type="text" name="item" placeholder="Legg til ny todo">
-        <input type="submit" value="Legg til">
+    <form action="/todo" method="POST" class="form">
+        <input type="text" name="item" placeholder="Legg til ny todo" required>
+        <button type="submit"> <i class="fa fa-plus"></i></button>
     </form>
 
     <!-- List of todos -->
-    <div class="row">
         <ul>
             <% todos.forEach(function(todos){ %>
-                <li> <%= todos.name %></li>
+
+                <li> <span data-id="<%= todos._id %>">  <i class="fa fa-trash"></i>  </span> <%= todos.name %></li>
+                
             <% }) %> 
         </ul>
-    </div>
 
 
 </div>
+
+
+
+
+    <!-- <span>
+        <form action="/todos/:<%= todos._id %>?_method=DELETE" method="post">
+            <button type="submit"> <i class="fa fa-trash"></i></button>
+        </form>
+    </span>
+    <%= todos.name %> -->
 
 <% include ../partials/footer %>

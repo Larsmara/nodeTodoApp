@@ -32,4 +32,35 @@ router.post("/", middleware.isLoggedIn, function(req,res){
     });
 });
 
+// GET TODOS
+router.get("/:id", function(req,res){
+    Todo.findById(req.params.id).exec(function(err, foundTodo){
+        if(err){
+            console.log(err);
+        } else {
+            res.send({todos: foundTodo.name});
+        }
+    });
+});
+
+// DELETE TODO
+router.delete("/:id", function(req,res){
+
+      let query = {_id:req.params.id}
+    
+      Todo.findById(req.params.id, function(err){
+        if(err){
+          console.log("Hææ");
+        } else {
+          Todo.remove(query, function(err){
+            if(err){
+              console.log(err);
+            }
+            res.send('Success');
+          });
+        }
+      });
+});
+
+
 module.exports = router;

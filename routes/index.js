@@ -41,7 +41,7 @@ router.post("/login", passport.authenticate("local",
 // Logout logic
 router.get("/logout", function(req,res){
     req.logOut();
-    res.render("landing");
+    res.redirect("/todo");
 });
 
 router.get("/about", function(req,res){
@@ -52,5 +52,6 @@ router.get("/about", function(req,res){
 router.get("/",function(req,res){
     res.render("landing");
 });
+
 
 module.exports = router;
