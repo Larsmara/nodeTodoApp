@@ -1,4 +1,44 @@
 .loginContainer {
-    width: 400px;
-    margin: auto;
+    width: 70%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+#userForm {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 100%;
+}
+
+.loginContainer input[type=text], input[type=password] {
+    width: 50%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+.loginContainer input[type=submit] {
+    width: 50%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+
+}
+
+.navbar {
+    background: cornflowerblue;
+    padding-left: 15%;
+    padding-right: 15%;
+    font-weight: 400;
+}
+
+.navbar ul li a {
+    color: black;
+}
+
+.navbar-brand {
+    color: black;
+    font-size: 24px;
 }

@@ -57,15 +57,5 @@ router.delete("/:id", function(req,res){
     });
 });
 
-/* if(err){
-    console.log("Hææ");
-  } else {
-    Todo.remove(query, function(err){
-      if(err){
-        console.log(err);
-      }
-      res.send("todo/index");
-    });
-  } */
 
 module.exports = router;

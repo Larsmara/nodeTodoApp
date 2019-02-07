@@ -1,10 +1,15 @@
 <% include partials/header %>
 
-<div class="container">
+<div class="loginContainer">
     <h1>Velkommen til min TodoApp!</h1>
     <hr>
-    <p>Alt her laget i Node.js</p>
-    <a href="/login">Logg inn for å fortsette</a>
+    <p>Laget ved hjelp av Node.js</p>
+    <% if(!currentUser) { %>
+        <a href="/login">Logg inn for å fortsette</a>
+    <% } else { %>
+        <a href="/todo">Gå til mine Todos</a>
+    <% } %>
+    
 </div>  
 
 <% include partials/footer %>
