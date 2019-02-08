@@ -1,9 +1,11 @@
 jQuery(document).ready(function(){
 
+    // Todo Item Mark as complete
     $(".todo").on("click", "li", function () {
         $(this).toggleClass("completed");
     });
 
+    // Remove todo item from list
     $("ul").on("click", "span", function(){
         const id = $(this).attr('data-id');
         $.ajax({

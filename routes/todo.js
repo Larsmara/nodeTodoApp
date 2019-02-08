@@ -10,7 +10,7 @@ router.get("/", middleware.isLoggedIn ,function(req,res){
         if(err){
             console.loog(err);
         } else {
-            res.render("todo/index", {currentUser: req.user,todos: todos});
+            res.render("todo/index", {currentUser: req.user,todos: todos, title:'Todo'});
         }
     });
 });
@@ -52,7 +52,7 @@ router.delete("/:id", function(req,res){
         if(err){
             console.log(err);
         } else {
-            res.render("todo/index");
+            res.redirect("/todo");
         }
     });
 });

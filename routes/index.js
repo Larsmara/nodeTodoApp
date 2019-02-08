@@ -8,7 +8,7 @@ var express     = require("express"),
 // AUTHENTICATION
 // Show register form
 router.get("/register",function(req,res){
-    res.render("register");
+    res.render("register", {title:'Registrer deg!'});
 });
 
 // Handle sign up logic
@@ -28,7 +28,7 @@ router.post("/register", function(req,res){
 
 // Show login form
 router.get("/login",function(req,res){
-    res.render("login");
+    res.render("login", {title:'Login'});
 });
 
 // Handle login logic
@@ -45,12 +45,12 @@ router.get("/logout", function(req,res){
 });
 
 router.get("/about", function(req,res){
-    res.render("about");
+    res.render("about", {title:'About me'});
 });
 
 // ROOT ROUTE
 router.get("/",function(req,res){
-    res.render("landing");
+    res.render("landing", {title:'Homepage'});
 });
 
 
