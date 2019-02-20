@@ -44,6 +44,7 @@ router.get("/logout", function(req,res){
     res.redirect("/todo");
 });
 
+// ABOUT ROUTE
 router.get("/about", function(req,res){
     res.render("about", {title:'About me'});
 });
